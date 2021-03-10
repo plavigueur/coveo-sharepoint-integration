@@ -6,6 +6,7 @@ import { HostedSearchPage } from '@coveops/hosted-search-page';
 import * as Coveo from 'coveo-search-ui';
 
 import SearchInterfaceTemplate from './SearchInterfaceTemplate';
+import CoveoConfig from '../../CoveoConfig';
 
 export interface ICoveoIntegrationWebPartProps {
   description: string;
@@ -60,12 +61,6 @@ export default class CoveoIntegrationWebPart extends BaseClientSideWebPart<ICove
   }
   
   private defineCoveoCustomParameters() {
-    Coveo['customParameters'] = Coveo['customParameters'] || {
-      coveoRestURI: 'https://platform.cloud.coveo.com/rest/search', // The URI of the Coveo service
-      coveoOrgId: 'myorgid', // The id of the Coveo Cloud organization
-      coveoSearchAPIKey: 'xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx', // The API key used for the search request (search and usage analytics)
-      coveoPageAPIKey: 'xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx', // The API key used to get the page content (search page API)
-      coveoPageId: 'xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx', // The id of the search page,
-    };
+    Coveo['customParameters'] = Coveo['customParameters'] || CoveoConfig;
   }
 }
