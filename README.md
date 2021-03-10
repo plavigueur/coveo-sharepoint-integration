@@ -19,9 +19,9 @@ Short summary on functionality and used technologies.
 
 ## Solution
 
-Author(s)
---------|---------
-Philippe Lavigueur | plavigueur@coveo.com
+| Author(s)          | Email                |
+|--------------------|----------------------|
+| Philippe Lavigueur | plavigueur@coveo.com |
 
 ## Disclaimer
 
