@@ -1,12 +1,13 @@
 {
   "@microsoft/generator-sharepoint": {
-    "isCreatingSolution": true,
+    "isCreatingSolution": false,
     "environment": "spo",
     "version": "1.11.0",
     "libraryName": "coveo-integration",
     "libraryId": "2a9752fa-f6e2-4ab1-9772-c018ae626915",
     "packageManager": "npm",
     "isDomainIsolated": false,
-    "componentType": "webpart"
+    "componentType": "extension",
+    "extensionType": "ApplicationCustomizer"
   }
 }

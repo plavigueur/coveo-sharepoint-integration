@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/coveoIntegration/CoveoIntegrationWebPart.manifest.json"
         }
       ]
+    },
+    "global-search-box-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/globalSearchBox/GlobalSearchBoxApplicationCustomizer.js",
+          "manifest": "./src/extensions/globalSearchBox/GlobalSearchBoxApplicationCustomizer.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "CoveoIntegrationWebPartStrings": "lib/webparts/coveoIntegration/loc/{locale}.js"
+    "CoveoIntegrationWebPartStrings": "lib/webparts/coveoIntegration/loc/{locale}.js",
+    "GlobalSearchBoxApplicationCustomizerStrings": "lib/extensions/globalSearchBox/loc/{locale}.js"
   }
 }

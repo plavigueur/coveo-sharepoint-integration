@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="GlobalSearchBox"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="acc0bdf6-3e90-426e-ab77-c926a0dc422f"
+        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </CustomAction>
+</Elements>

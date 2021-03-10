@@ -49,7 +49,11 @@ export default class CoveoIntegrationWebPart extends BaseClientSideWebPart<ICove
 
     // Listen on the search page API callback
     document.addEventListener('CoveoExternalScriptsLoaded', () => {
-      Coveo.init(hostedSearchPage.searchPage.querySelector('.CoveoSearchInterface'), {});
+      Coveo.init(hostedSearchPage.searchPage.querySelector('.CoveoSearchInterface'), {
+        externalComponents: [
+          document.getElementById('custom-coveo-standalone-search-box')
+        ]
+      });
     });
     
     // Configure the search page API and sent the request for the page content
