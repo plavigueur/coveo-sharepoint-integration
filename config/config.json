@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "coveo-integration-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/coveoIntegration/CoveoIntegrationWebPart.js",
+          "manifest": "./src/webparts/coveoIntegration/CoveoIntegrationWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CoveoIntegrationWebPartStrings": "lib/webparts/coveoIntegration/loc/{locale}.js"
+  }
+}
