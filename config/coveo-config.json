@@ -1,0 +1,7 @@
+{
+    "coveoRestURI": "https://platform.cloud.coveo.com/rest/search",
+    "coveoOrgId": "myorgid",
+    "coveoSearchAPIKey": "xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",
+    "coveoPageAPIKey": "xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx",
+    "coveoPageId": "xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
+}
