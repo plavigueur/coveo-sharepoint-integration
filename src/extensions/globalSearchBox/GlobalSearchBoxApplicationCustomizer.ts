@@ -6,7 +6,8 @@ import {
 } from '@microsoft/sp-application-base';
 import { sp } from '@pnp/sp/presets/all';
 
-import * as Coveo from 'coveo-search-ui';
+require('coveo-search-ui');
+require('./../../../node_modules/coveo-search-ui/bin/css/CoveoFullSearch.min.css');
 
 import SearchBoxTemplate from './SearchBoxTemplate';
 import CoveoConfig from '../../CoveoConfig';
@@ -55,8 +56,6 @@ export default class GlobalSearchBoxApplicationCustomizer
   }
 
   private renderPlaceholders(forceInit: boolean, forceRedirect: boolean) {
-    Coveo;
-
     this.replaceHeaderDOM();
 
     // We need to remove the reload query parameter to allow the pushState logic to work twice
@@ -65,8 +64,8 @@ export default class GlobalSearchBoxApplicationCustomizer
     }
 
     // Initialize the search box if we are not on the full search page
-    if (forceInit || !document.querySelector('#custom-coveo-main-search-interface')) {
-      this.initSearchbpx(forceRedirect)
+    if (forceInit || (!document.querySelector('#custom-coveo-main-search-interface') && location.pathname  !== Coveo['customParameters'].coveoSearchPageUrl)) {
+      this.initSearchbox(forceRedirect)
     }
   }
 
@@ -81,7 +80,7 @@ export default class GlobalSearchBoxApplicationCustomizer
     }  
   }
 
-  private initSearchbpx(forceRedirect: boolean): void {
+  private initSearchbox(forceRedirect: boolean): void {
     // Build the search endpoint
     Coveo.SearchEndpoint.endpoints['default'] = new Coveo.SearchEndpoint({
       restUri: Coveo['customParameters'].coveoRestURI,
@@ -92,10 +91,15 @@ export default class GlobalSearchBoxApplicationCustomizer
     });
 
     // Initialize the search box
+    console.log('Extension initialization');
+    
     Coveo.initSearchbox(
       document.getElementById('custom-coveo-standalone-search-box'),
-      Coveo['customParameters'].coveoSearchPageUrl + (forceRedirect ? '?reload=true' : ''),
-      { }
+      Coveo['customParameters'].coveoSearchPageUrl + (forceRedirect ? '?reload=true' : ''), {
+        Analytics: {
+          searchHub: Coveo['customParameters'].coveoSearchHub
+        }
+      }
     );
   }
 
