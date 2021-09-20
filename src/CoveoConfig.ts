@@ -4,5 +4,6 @@ export default {
     coveoSearchAPIKey: 'xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx', // The API key used for the search request (search and usage analytics)
     coveoPageAPIKey: 'xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx', // The API key used to get the page content (search page API)
     coveoPageId: 'xxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx', // The id of the search page,
-    coveoSearchPageUrl: '/sites/mysite/SitePages/coveo-full-search-page.aspx' // The relative URL of the Coveo full search page
+    coveoSearchPageUrl: '/sites/mysite/SitePages/coveo-full-search-page.aspx', // The relative URL of the Coveo full search page
+    coveoSearchHub: 'default' // Search Page Hub
 }
